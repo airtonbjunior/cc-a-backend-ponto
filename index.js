@@ -2,16 +2,20 @@ const express = require('express');
 const app = express();
 
 const sequelize = require('./config/db');
+const Usuario = require('./models/Usuario');
+const Ponto = require('./models/Ponto');
 
-sequelize.authenticate()
+
+sequelize.sync({ alter: true })
     .then(() => {
-        console.log("Conectei no banco");
+        console.log("SUCESSO!");
     })
     .catch(error => {
-        console.log(`Deu erro ao conectar no bd ${error}`);
+        console.log(`Erro ao sincronizar as tabelas - ${error}`);
     });
 
 
+Ponto.create({ tipo: 'I', dataHora: 'sfsdfsdfgsdfgsdfgdsfgss' });
 
 
 
