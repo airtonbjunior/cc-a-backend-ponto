@@ -1,3 +1,18 @@
+/*
+    TO-DO:
+        - Adequar frontend para chamar o backend (bater ponto, por exemplo)
+            - fetch - 2 then
+        - rota de login
+            - JWT
+            - Cookies
+        - Middleware de verificação de autenticação
+        - Criar tela de login
+        - todas as páginas devem verificar se o usuário está logado
+            - se o usuário não estiver logado, redirecionar para /login
+*/
+
+
+
 const express = require('express');
 const app = express();
 const cors = require('cors');

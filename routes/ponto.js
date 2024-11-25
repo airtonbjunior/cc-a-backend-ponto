@@ -30,6 +30,19 @@ router.post('/ponto', async (req, res) => {
 });
 
 
+router.put('/ponto/:id_ponto', async (req, res) => {
+    const ponto = await Ponto.findByPk(req.params.id_ponto);
+
+    // e se o ponto não existir?
+
+    const pontoAtualizado = await ponto.update({
+        tipo: req.body.tipo,
+        dataHora: req.body.dataHora
+    });
+
+    res.json(pontoAtualizado);
+});
+
 router.delete('/ponto/:id_ponto', async (req, res) => {
     const ponto = await Ponto.findByPk(req.params.id_ponto);
 
@@ -38,6 +51,12 @@ router.delete('/ponto/:id_ponto', async (req, res) => {
 
     res.send(`O ponto com id ${req.params.id_ponto} foi deletado com sucesso!`);
 });
+
+
+// TO-DO:
+// Fazer rota que traga todos pontos de um usuário específico
+// /pontos/usuario/:id_usuario
+// /pontos/:id_usuario
 
 
 module.exports = router;
