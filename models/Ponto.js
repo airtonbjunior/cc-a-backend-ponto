@@ -23,6 +23,11 @@ const Ponto = sequelize.define('Ponto', {
     dataHora: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    id_usuario: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        key: 'id_usuario'
     }
 },
 {
