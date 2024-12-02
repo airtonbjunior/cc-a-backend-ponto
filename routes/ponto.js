@@ -23,7 +23,8 @@ router.post('/ponto', async (req, res) => {
     const ponto = await Ponto.create({
         tipo: req.body.tipo,
         dataHora: req.body.dataHora,
-        id_usuario: req.body.id_usuario
+        id_usuario: req.body.id_usuario,
+        localizacao: req.body.localizacao
     });
 
     res.json(ponto);
